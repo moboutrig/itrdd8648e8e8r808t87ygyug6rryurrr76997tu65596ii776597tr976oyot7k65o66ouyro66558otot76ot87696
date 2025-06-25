@@ -1,0 +1,97 @@
+
+
+
+Of course. Here is the single, full path to the file you need to edit to safely remove the "Recommendations" button from your Dashboard and prevent the pop-up from appearing.
+
+The Only File to Change:
+
+File: page_header_toolbar.tpl
+
+Full Path: qloapps-qloapps/admin/themes/default/template/page_header_toolbar.tpl
+
+Note: As a reminder, your security-renamed admin folder means the path on your server will look like this:
+
+qloapps-qloapps/admin09i0u80u876t75fffcv8bhc442334444fytf/themes/default/template/page_header_toolbar.tpl
+
+You only need to edit this one file. By commenting out the specific {if isset($toolbar_btn['modules-list'])}...{/if} block within it, you will achieve your goal without affecting any other functionality.
+
+
+
+
+Yes, this is the correct file content for page_header_toolbar.tpl. Thank you for providing it.
+
+Now I can give you the exact and final instruction to remove the "Recommendations" button from the Dashboard, which will prevent the pop-up from appearing.
+
+The Code to Remove
+
+Inside the file you posted, this is the specific block of code that generates the "Recommendations" button. It is uniquely identified by the key 'modules-list'.
+
+Generated smarty
+{if isset($toolbar_btn['modules-list'])}
+<li>
+    <a id="page-header-desc-{$table}-{if isset($toolbar_btn['modules-list'].imgclass)}{$toolbar_btn['modules-list'].imgclass}{else}modules-list{/if}" class="toolbar_btn{if isset($toolbar_btn['modules-list'].class)} {$toolbar_btn['modules-list'].class}{/if}{if isset($toolbar_btn['modules-list'].target) && $toolbar_btn['modules-list'].target} _blank{/if}" {if isset($toolbar_btn['modules-list'].href)}href="{$toolbar_btn['modules-list'].href}"{/if} title="{$toolbar_btn['modules-list'].desc}"{if isset($toolbar_btn['modules-list'].js) && $toolbar_btn['modules-list'].js} onclick="{$toolbar_btn['modules-list'].js}"{/if}>
+        <i class="{if isset($toolbar_btn['modules-list'].icon)}{$toolbar_btn['modules-list'].icon}{else}process-icon-{if isset($toolbar_btn['modules-list'].imgclass)}{$toolbar_btn['modules-list'].imgclass}{else}modules-list{/if}{/if}"></i>
+        <span{if isset($toolbar_btn['modules-list'].force_desc) && $toolbar_btn['modules-list'].force_desc == true } class="locked"{/if}>{$toolbar_btn['modules-list'].desc}</span>
+    </a>
+</li>
+{/if}
+
+
+The JavaScript section below it is also related, as it defines what happens when you click the button.
+
+Action: How to Permanently Remove the Button
+
+We will comment out the code block responsible for creating the button. This is the safest way to disable it without deleting the code.
+
+Using your hosting File Manager, open the file page_header_toolbar.tpl for editing.
+
+Full Path: qloapps-qloapps/admin.../themes/default/template/page_header_toolbar.tpl
+
+Find the block of code shown above.
+
+Wrap this entire block, from {if... to {/if}, in Smarty comment tags: {** at the beginning and *} at the end.
+
+AFTER EDIT:
+
+Generated smarty
+{**
+    {if isset($toolbar_btn['modules-list'])}
+    <li>
+        <a id="page-header-desc-{$table}-{if isset($toolbar_btn['modules-list'].imgclass)}{$toolbar_btn['modules-list'].imgclass}{else}modules-list{/if}" class="toolbar_btn{if isset($toolbar_btn['modules-list'].class)} {$toolbar_btn['modules-list'].class}{/if}{if isset($toolbar_btn['modules-list'].target) && $toolbar_btn['modules-list'].target} _blank{/if}" {if isset($toolbar_btn['modules-list'].href)}href="{$toolbar_btn['modules-list'].href}"{/if} title="{$toolbar_btn['modules-list'].desc}"{if isset($toolbar_btn['modules-list'].js) && $toolbar_btn['modules-list'].js} onclick="{$toolbar_btn['modules-list'].js}"{/if}>
+            <i class="{if isset($toolbar_btn['modules-list'].icon)}{$toolbar_btn['modules-list'].icon}{else}process-icon-{if isset($toolbar_btn['modules-list'].imgclass)}{$toolbar_btn['modules-list'].imgclass}{else}modules-list{/if}{/if}"></i>
+            <span{if isset($toolbar_btn['modules-list'].force_desc) && $toolbar_btn['modules-list'].force_desc == true } class="locked"{/if}>{$toolbar_btn['modules-list'].desc}</span>
+        </a>
+    </li>
+    {/if}
+*}
+
+
+
+{* --- Hiding the Modules List button on purpose ---
+{if isset($toolbar_btn['modules-list'])}
+<li>
+    <a id="page-header-desc-{$table}-{if isset($toolbar_btn['modules-list'].imgclass)}{$toolbar_btn['modules-list'].imgclass}{else}modules-list{/if}" class="toolbar_btn{if isset($toolbar_btn['modules-list'].class)} {$toolbar_btn['modules-list'].class}{/if}{if isset($toolbar_btn['modules-list'].target) && $toolbar_btn['modules-list'].target} _blank{/if}" {if isset($toolbar_btn['modules-list'].href)}href="{$toolbar_btn['modules-list'].href}"{/if} title="{$toolbar_btn['modules-list'].desc}"{if isset($toolbar_btn['modules-list'].js) && $toolbar_btn['modules-list'].js} onclick="{$toolbar_btn['modules-list'].js}"{/if}>
+        <i class="{if isset($toolbar_btn['modules-list'].icon)}{$toolbar_btn['modules-list'].icon}{else}process-icon-{if isset($toolbar_btn['modules-list'].imgclass)}{$toolbar_btn['modules-list'].imgclass}{else}modules-list{/if}{/if}"></i>
+        <span{if isset($toolbar_btn['modules-list'].force_desc) && $toolbar_btn['modules-list'].force_desc == true } class="locked"{/if}>{$toolbar_btn['modules-list'].desc}</span>
+    </a>
+</li>
+{/if}
+*}
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Smarty
+IGNORE_WHEN_COPYING_END
+
+Save the page_header_toolbar.tpl file.
+
+Final, Mandatory Step: Clear the Cache
+
+In your QloApps Admin Panel, go to Advanced Parameters -> Performance.
+
+Click the "Clear cache" button.
+
+Go back to the Dashboard and do a hard refresh (Ctrl + F5 or Cmd + Shift + R).
+
+This action will remove the "Recommendations" button from the toolbar on your Dashboard. Since the button will be gone, you will no longer be able to trigger the pop-up. This achieves your goal permanently without modifying any PHP or CSS.

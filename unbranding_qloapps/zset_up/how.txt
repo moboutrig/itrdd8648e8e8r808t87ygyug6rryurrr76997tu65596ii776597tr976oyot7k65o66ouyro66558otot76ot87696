@@ -1,0 +1,11 @@
+1 
+
+
+
+2
+
+docker compose down -v
+
+3
+
+docker rmi webkul/qloapps_docker:latest

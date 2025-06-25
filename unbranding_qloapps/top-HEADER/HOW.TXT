@@ -1,0 +1,21 @@
+
+
+FULL PATH :
+
+
+
+
+
+root@45bf7d905b30:/home/qloapps/www/QloApps/admin09i0u80u876t75fffcv8bhc442334444fytf/themes/default/template# 
+   
+   
+   
+   
+rmovve thsi is the vertion 
+
+   			<span id="shop_version">{$qloapps_version}</span>
+
+
+
+
+

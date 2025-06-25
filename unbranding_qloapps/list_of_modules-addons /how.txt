@@ -1,0 +1,38 @@
+Full Path: qloapps-qloapps/admin/themes/default/template/controllers/modules/page.tpl
+
+
+
+
+
+(Remember your admin folder is renamed, so the path on your server will be qloapps-qloapps/admin.../themes/default/template/controllers/modules/page.tpl)
+Step-by-Step Instructions
+Backup the File: In your File Manager, make a copy of page.tpl and name it page.tpl.bak.
+Open page.tpl for Editing.
+Find the Banner Code: Inside page.tpl, you will find the block of HTML code that creates the blue banner. Search (Ctrl+F or Cmd+F) for the text:
+Explore all QloApps addons
+You will find a block of code that looks something like this:
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel">
+            <div class="panel-heading">
+                <i class="icon-rocket"></i> {l s='Explore all QloApps addons'}
+                <a class="btn btn-default pull-right" href="{$addons_link}" target="_blank">{l s='QloApps addons'}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alert bg-info">
+        <div class="row modules-addons-info">
+                <h4>{l s='Explore all QloApps addons'} <a class="btn btn-default _blank" href="https://qloapps.com/addons/"> {l s='QloApps addons'}</a></h4>
+        </div>
+</div>

@@ -1,0 +1,9 @@
+The only file you need to change is the main layout template. The full, absolute path to this file is:
+/home/qloapps/www/QloApps/admin09i0u80u876t75fffcv8bhc442334444fytf/themes/default/template/layout.tpl
+Why this file? This file acts as the master template for every page in your admin panel. It contains the command that tells the system to load and display the footer. By changing this file, we stop the footer from being loaded anywhere.
+
+
+
+
+
+

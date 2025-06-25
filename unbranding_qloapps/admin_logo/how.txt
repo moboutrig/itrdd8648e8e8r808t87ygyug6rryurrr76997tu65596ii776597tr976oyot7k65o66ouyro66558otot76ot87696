@@ -1,0 +1,18 @@
+root@45bf7d905b30:/home/qloapps/www/QloApps# cd admin09i0u80u876t75fffcv8bhc442334444fytf/themes/default/img
+
+
+
+curl -o my-hotel-logo.png https://parksuiteshotel.nextappli.net/wp-content/uploads/2023/12/logo-1.png
+
+
+curl -o   qloapps-back-office-header.png     https://parksuiteshotel.nextappli.net/wp-content/uploads/2023/12/logo-1.png
+
+
+
+>>>>>>> qloapps-back-office-header.png
+
+
+
+
+
+

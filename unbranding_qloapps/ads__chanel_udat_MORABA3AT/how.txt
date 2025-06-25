@@ -1,0 +1,10 @@
+CHANGE THIS PLEAS 
+
+
+
+
+root@45bf7d905b30:/home/qloapps/www/QloApps/admin09i0u80u876t75fffcv8bhc442334444fytf/themes/default/template/controllers/dashboard/helpers/view/view.tpl
+
+
+
+change this file pleas  :  root@45bf7d905b30:/home/qloapps/www/QloApps/admin897r97utyg297rtrr28yf392786yjmwe/themes/default/template# nano controllers/dashboard/helpers/view/view.tpl
