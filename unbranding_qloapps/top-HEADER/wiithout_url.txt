@@ -154,7 +154,7 @@
 										</span>
 									</div>
 									<div class="notifs_panel_footer">
-										<a href="index.php?controller=AdminOrders&token={getAdminToken tab='AdminOrders'}">{l s='Show all orders'}</a>
+										<a href="index.php?controller=AdminOrders&amp;token={getAdminToken tab='AdminOrders'}">{l s='Show all orders'}</a>
 									</div>
 								</section>
 							</div>
@@ -179,7 +179,7 @@
 										</span>
 									</div>
 									<div class="notifs_panel_footer">
-										<a href="index.php?controller=AdminCustomers&token={getAdminToken tab='AdminCustomers'}">{l s='Show all customers'}</a>
+										<a href="index.php?controller=AdminCustomers&amp;token={getAdminToken tab='AdminCustomers'}">{l s='Show all customers'}</a>
 									</div>
 								</section>
 							</div>
@@ -204,7 +204,7 @@
 										</span>
 									</div>
 									<div class="notifs_panel_footer">
-										<a href="index.php?controller=AdminCustomerThreads&token={getAdminToken tab='AdminCustomerThreads'}">{l s='Show all messages'}</a>
+										<a href="index.php?controller=AdminCustomerThreads&amp;token={getAdminToken tab='AdminCustomerThreads'}">{l s='Show all messages'}</a>
 									</div>
 								</section>
 							</div>
@@ -284,7 +284,7 @@
 													if (typeof data[index] == 'string')
 														$.growl.error({ title: "", message: data[index]});
 												});
-											else if (quicklink_list)
+											else
 											{
 												$("#header_quick ul.dropdown-menu").html(quicklink_list);
 												showSuccessMessage(update_success_msg);
@@ -301,14 +301,12 @@
 					{if isset($upgrade_info->update_available) && $upgrade_info->update_available > 0}
 						<li class="hidden-md hidden-sm hidden-xs"><a href="{$upgrade_info->upgrade_url}">{l s='QloApps Update Availabe:'} {$upgrade_info->latest_availabe}</a></li>
 					{/if}
-					{*
 					<li class="hidden-sm hidden-xs">
 						<a target="_blank" href="https://qloapps.com/addons/" class="toolbar_btn" title="{l s='Explore QloApps Addons'}">
 							<i class="icon-chain-broken"></i>
 							{l s='Explore QloApps Addons'}
 						</a>
 					</li>
-					*}
 					{if {$base_url}}
 						<li>
 							<a href="{if isset($base_url_tc)}{$base_url_tc|escape:'html':'UTF-8'}{else}{$base_url|escape:'html':'UTF-8'}{/if}" id="header_foaccess" class="_blank" title="{l s='View my shop'}">
@@ -317,7 +315,7 @@
 							</a>
 							{if isset($maintenance_mode) && $maintenance_mode == true}
 								<span class="maintenance-mode">
-									—
+									&mdash;
 									<span class="label-tooltip" data-toggle="tooltip" data-placement="bottom" data-html="true"
 									title="<p class='text-left text-nowrap'><strong>{l s='Your site is in maintenance.'}</strong></p><p class='text-left'>{l s='Your visitors and customers cannot access your shop while in maintenance mode.%s To manage the maintenance settings, go to Preferences > Maintenance.' sprintf='<br />'}</p>">{l s='Maintenance mode'}</span>
 								</span>
@@ -325,17 +323,17 @@
 						</li>
 					{/if}
 					<li id="employee_infos" class="dropdown">
-						<a href="{$link->getAdminLink('AdminEmployees')|escape:'html':'UTF-8'}&id_employee={$employee->id|intval}&updateemployee" class="dropdown-toggle" data-toggle="dropdown">
-							<span class="string-long">{$employee->firstname} {$employee->lastname}</span>
+						<a href="{$link->getAdminLink('AdminEmployees')|escape:'html':'UTF-8'}&amp;id_employee={$employee->id|intval}&amp;updateemployee" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="string-long">{$employee->firstname}&nbsp;{$employee->lastname}</span>
 							<span class="string-short">{l s='Me'}</span>
 							<i class="caret"></i>
 						</a>
 						<ul id="employee_links" class="dropdown-menu">
-							<li><a href="{$link->getAdminLink('AdminEmployees')|escape:'html':'UTF-8'}&id_employee={$employee->id|intval}&updateemployee"><i class="icon-wrench"></i> {l s='My preferences'}</a></li>
+							<li><a href="{$link->getAdminLink('AdminEmployees')|escape:'html':'UTF-8'}&amp;id_employee={$employee->id|intval}&amp;updateemployee"><i class="icon-wrench"></i> {l s='My preferences'}</a></li>
 							{if $host_mode}
 							<li><a href="https://www.prestashop.com/cloud/" class="_blank"><i class="icon-wrench"></i> {l s='My PrestaShop account'}</a></li>
 							{/if}
-							<li><a id="header_logout" href="{$login_link|escape:'html':'UTF-8'}&logout"><i class="icon-signout"></i> {l s='Sign out'}</a></li>
+							<li><a id="header_logout" href="{$login_link|escape:'html':'UTF-8'}&amp;logout"><i class="icon-signout"></i> {l s='Sign out'}</a></li>
 						</ul>
 					</li>
 				</ul>
