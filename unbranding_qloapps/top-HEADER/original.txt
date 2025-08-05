@@ -1,4 +1,3 @@
-root@45bf7d905b30:/home/qloapps/www/QloApps/admin09i0u80u876t75fffcv8bhc442334444fytf/themes/default/template# cat header.tpl 
 {*
 * 2007-2017 PrestaShop
 *
@@ -285,7 +284,7 @@ root@45bf7d905b30:/home/qloapps/www/QloApps/admin09i0u80u876t75fffcv8bhc44233444
 													if (typeof data[index] == 'string')
 														$.growl.error({ title: "", message: data[index]});
 												});
-											else if (quicklink_list)
+											else
 											{
 												$("#header_quick ul.dropdown-menu").html(quicklink_list);
 												showSuccessMessage(update_success_msg);
